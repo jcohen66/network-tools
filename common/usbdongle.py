@@ -6,7 +6,7 @@ def setMonitorMode(iface, output=False):
         os.system('iwconfig ' + iface)
 
     os.system('ifconfig ' + iface + ' down')
-    os.system('airmon-ng ' + iface + ' check kill')
+    os.system('airmon-ng check kill')
     os.system('iwconfig ' + iface + ' mode monitor')
     os.system('ifconfig ' + iface + ' up')
 
