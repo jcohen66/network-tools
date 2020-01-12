@@ -13,6 +13,10 @@ def getHwAddr(ifname):
 def setTempHwAddr(iface, tempAddr, output=False):
     if output:
         print(getHwAddr(iface))
+
+    os.system('ifconfig ' + iface + ' down')
     os.system('ifconfig ' + iface + ' hw ether ' + tempAddr)
+    os.system('ifconfig ' + iface + ' up')
+
     if output:
         print(getHwAddr(iface))
